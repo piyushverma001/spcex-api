@@ -4,6 +4,7 @@ import HomePage from './Components/HomePage';
 import './App.css';
 import './Components/Missions'
 import Missions from './Components/Missions';
+import Launches from './Components/Launches';
 // import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 // const theme = createMuiTheme({
@@ -24,6 +25,7 @@ function App() {
     <>
       <Route exact path="/" component={HomePage} />
       <Route path="/missions" component={Missions}/>
+      <Route path="/launches" component={Launches}/>
       </>
     // </MuiThemeProvider>
   );

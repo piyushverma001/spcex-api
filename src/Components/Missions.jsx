@@ -59,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
     },
     cardActions:{
         margin:"auto auto"
+    },
+    cardActionsContainer:{
+        background:"#F2F0E9"
     }
     
 }))
@@ -129,7 +132,7 @@ const Missions = () => {
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
-                                <CardActions >
+                                <CardActions className={classes.cardActionsContainer}>
                                     <div className={classes.cardActions}>
 
                                     <Button onClick={() => handleOpen(item)}>

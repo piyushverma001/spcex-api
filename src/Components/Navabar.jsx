@@ -112,7 +112,7 @@ const Navabar = () => {
                         Missions
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitem}>
+                    <ListItem component={Link} to="/launches"  className={classes.listitem}>
                         Launches
                     </ListItem>
 
@@ -163,11 +163,11 @@ const Navabar = () => {
                         About
                     </ListItem>
                     
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/missions" className={classes.listitemmob}>
                         Missions
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/launches" className={classes.listitemmob}>
                         Launches
                     </ListItem>
 
