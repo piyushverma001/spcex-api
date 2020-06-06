@@ -171,23 +171,23 @@ const Navabar = () => {
                         Launches
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/rockets" className={classes.listitemmob}>
                         Rockets
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/payloads" className={classes.listitemmob}>
                         Payloads
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/ships" className={classes.listitemmob}>
                         Ships
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/cores" className={classes.listitemmob}>
                         Cores
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/launchpads" className={classes.listitemmob}>
                         Launch Pads
                     </ListItem>
 
