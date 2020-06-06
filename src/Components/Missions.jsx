@@ -75,6 +75,7 @@ const Missions = () => {
     const [DialogData, setDialogData ] = useState('');
 
     useEffect(() => {
+        
         async function getMissions(){
             setLoading(true)
             try{
