@@ -19,16 +19,19 @@ import Launches from './Components/Launches';
 //   },
 // })
 
-function App() {
-  return (
-    // <MuiThemeProvider theme={theme}>
-    <>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/missions" component={Missions}/>
-      <Route path="/launches" component={Launches}/>
+class App extends React.Component {
+  render(){
+
+    return (
+      // <MuiThemeProvider theme={theme}>
+      <>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/missions" component={Missions}/>
+        <Route path="/launches" component={Launches}/>
       </>
-    // </MuiThemeProvider>
-  );
+      // </MuiThemeProvider>
+    );
+  }
 }
 
 export default App;
