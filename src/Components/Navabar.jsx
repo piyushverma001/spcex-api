@@ -104,7 +104,7 @@ const Navabar = () => {
                 <img src={spacex} className={classes.logo} alt="spacex logo"/>
 
                 <List className={classes.listcontainer}>
-                    <ListItem component={Link} className={classes.listitem}>
+                    <ListItem component={Link} to="/" className={classes.listitem}>
                         About
                     </ListItem>
                     
@@ -116,23 +116,23 @@ const Navabar = () => {
                         Launches
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitem}>
+                    <ListItem component={Link} to="/rockets" className={classes.listitem}>
                         Rockets
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitem}>
+                    <ListItem component={Link} to="/payloads" className={classes.listitem}>
                         Payloads
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitem}>
+                    <ListItem component={Link} to="/ships" className={classes.listitem}>
                         Ships
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitem}>
+                    <ListItem component={Link} to="/cores" className={classes.listitem}>
                         Cores
                     </ListItem>
 
-                    <ListItem component={Link} className={classes.listitem}>
+                    <ListItem component={Link} to="/launchpads" className={classes.listitem}>
                         Launch Pads
                     </ListItem>
 
@@ -159,7 +159,7 @@ const Navabar = () => {
         
          >
             <List>
-                    <ListItem component={Link} className={classes.listitemmob}>
+                    <ListItem component={Link} to="/" className={classes.listitemmob}>
                         About
                     </ListItem>
                     

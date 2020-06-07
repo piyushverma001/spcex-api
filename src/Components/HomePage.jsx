@@ -9,16 +9,17 @@ import spacex4 from '../images/homeImages/spacex4.jpg'
 import spacex5 from '../images/homeImages/spacex5.jpg'
 import spacex6 from '../images/homeImages/spacex6.jpg'
 import spacex7 from '../images/homeImages/spacex7.jpg'
-
-import axios from 'axios'
+import WebIcon from '@material-ui/icons/Web';
+// import axios from 'axios'
 import {
 Card,
 CardMedia,
 Box,
-Typography
+Typography,
+IconButton
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 const useStyles = makeStyles((theme) => ({
     mainContainer:{
@@ -49,6 +50,29 @@ const useStyles = makeStyles((theme) => ({
     info:{
         marginTop:"2rem",
         color:"white",
+        marginLeft:"1.5rem"
+    },
+    links:{
+        display:"flex",
+        flexDirection:"row",
+        height:"3rem",
+        marginTop:"3rem",
+        width:"200px",
+        marginLeft:"auto",
+        marginRight:"auto"
+
+    },
+    icon:{
+        color:"white",
+        textDecoration:"none",
+        marginTop:"auto",
+        marginLeft:"1rem",
+        marginRight:"1rem",
+        transition:"transform 0.2s",
+        '&:hover':{
+            transform:"scale(1.5)",
+            color:"#F2881B"
+        }
     }
 }))
 
@@ -135,13 +159,29 @@ const HomePage = () => {
                             COO : <strong>Gwynne Shotwell</strong>
                         </Typography>
                         <Typography>
-                            Company Valuation : <strong>27500000000 $</strong>
+                            Company Valuation : <strong>27.5B $</strong>
+                        </Typography>
+
+                        <Typography>
+                            Headquarters : <strong>Rocket Road, Hawthorne, California.</strong>
                         </Typography>
                     </Box>
 
-                
-
             </Box>
+                        <Box component="div" className={classes.links} >
+                            <IconButton title="spacex.com" href="https://www.spacex.com/" target="_blank">
+                                <WebIcon className={classes.icon} fontSize="large"/>
+                            </IconButton>
+                    
+                            <IconButton title="spacex Twitter" href="https://twitter.com/SpaceX" target="_blank">
+                                <TwitterIcon className={classes.icon} fontSize="large"  />
+                            </IconButton>
+
+                            <IconButton title="Elon Twitter" href="https://twitter.com/elonmusk" target="_blank">
+                                <TwitterIcon className={classes.icon} fontSize="large" />
+                            </IconButton>
+
+                        </Box>
         </div>
     )
 }

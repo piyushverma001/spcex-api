@@ -253,6 +253,8 @@ const Launches = () => {
                                 <strong>Launch Succes : </strong>{(DialogData.launch_success) ? <span style={{color:"green"}}>Successfull</span> : <span style={{color:"red"}}>Failed</span>}
                             </DialogContentText>
 
+                            
+
                             {(!DialogData.launch_success) && 
 
                             <DialogContentText>
