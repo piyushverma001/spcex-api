@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Navbar from './Navabar'
 import Carousel from 'react-material-ui-carousel';
-import spacex from '../images/background.png'
-import spacex2 from '../images/background2.jpg'
+import spacex1 from '../images/homeImages/spacex1.jpg'
+import spacex2 from '../images/homeImages/spacex2.jpg'
+import spacex3 from '../images/homeImages/spacex3.jpg'
+
+import spacex4 from '../images/homeImages/spacex4.jpg'
+import spacex5 from '../images/homeImages/spacex5.jpg'
+import spacex6 from '../images/homeImages/spacex6.jpg'
+import spacex7 from '../images/homeImages/spacex7.jpg'
+
 import axios from 'axios'
 import {
 Card,
 CardMedia,
-Box
+Box,
+Typography
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -21,68 +29,33 @@ const useStyles = makeStyles((theme) => ({
     },
     carouselContainer:{
         width:"40vw",
-        height:"40vh",
         [theme.breakpoints.between("sm","md")]:{
             width:"50vw",
-            height:"40vh"
         },
         [theme.breakpoints.down("sm")]:{
             width:"80vw",
-            height:"40vh"
         }
     },
-    carouselCard:{
-        // width:"100%",
-        // height:"100%"
+    title:{
+        position:"relative",
+        color:"white",
+        marginTop:"2rem",
+        width:"60%",
+        [theme.breakpoints.down("sm")]:{
+            marginTop:"10px",
+            width:"90%"
+        }
+    },
+    info:{
+        marginTop:"2rem",
+        color:"white",
     }
 }))
 
 const HomePage = () => {
-    const classes = useStyles();
+    const classes = useStyles();  
 
-    const [Data, setData] = useState('')
 
-    
-
-    useEffect(() => {
-
-        
-
-        async function getData(){  
-        
-            try{
-                await axios.get(`https://www.flickr.com/photos/spacex/`,{
-                    headers:{
-                        "Access-Control-Allow-Origin": "http://localhost:3000",
-                        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
-
-                    },
-                    
-                })
-                .then((res) =>{
-                     console.log(res.data);
-                     setData(res.data);
-                    //  console.log(Data)
-                    
-                    //  getImages();
-                    // setisError(false);
-                });
-                // setLoading(false)
-            }
-            catch(err){
-                // setisError(true);
-                console.log(err)
-                // setLoading(false)
-            }
-            
-        }
-
-        
-
-        getData();
-        // getImages();
-
-    },[])
 
     return (
         <div>
@@ -92,21 +65,81 @@ const HomePage = () => {
                 <Box component="div" className={classes.carouselContainer}>
 
                     <Carousel
-                        interval="1000"
+                        interval="3000"
+                        animation="fade"
+                        navButtonsAlwaysVisible
+                        timeout={{
+                            appear: 500,
+                            enter: 500,
+                            exit: 0   // <-- Set this to 0
+                        }}
                     >
                         <Card className={classes.carouselCard}>
                             <CardMedia 
                             component="img"
-                            image={spacex} />
+                            image={spacex1} />
                         </Card>
                         <Card className={classes.carouselCard}>
                             <CardMedia 
                             component="img"
                             image={spacex2} />
                         </Card>
+                        <Card className={classes.carouselCard}>
+                            <CardMedia 
+                            component="img"
+                            image={spacex3} />
+                        </Card>
+                        <Card className={classes.carouselCard}>
+                            <CardMedia 
+                            component="img"
+                            image={spacex4} />
+                        </Card>
+                        <Card className={classes.carouselCard}>
+                            <CardMedia 
+                            component="img"
+                            image={spacex5} />
+                        </Card>
+                        <Card className={classes.carouselCard}>
+                            <CardMedia 
+                            component="img"
+                            image={spacex6} />
+                        </Card>
+                        <Card className={classes.carouselCard}>
+                            <CardMedia 
+                            component="img"
+                            image={spacex7} />
+                        </Card>
+                        
                     </Carousel> 
+                    </Box>
+                    <Box component="div" className={classes.title}>
+                        <Typography variant="h3" align="center">
+                            SpaceX
+                        </Typography>
+                            <br/>
+                        <Typography variant="subtitle1" align="center">
+                        SpaceX designs, manufactures and launches advanced rockets and spacecraft.
+                         The company was founded in 2002 to revolutionize space technology, 
+                         with the ultimate goal of enabling people to live on other planets.
+                        </Typography>
+                    </Box>
 
-                </Box>
+                    <Box component="div" className={classes.info}>
+                        <Typography>
+                            CEO : <strong>ELON MUSK</strong>
+                        </Typography>
+                        <Typography>
+                            CTO : <strong>ELON MUSK</strong>
+                        </Typography>
+                        <Typography>
+                            COO : <strong>Gwynne Shotwell</strong>
+                        </Typography>
+                        <Typography>
+                            Company Valuation : <strong>27500000000 $</strong>
+                        </Typography>
+                    </Box>
+
+                
 
             </Box>
         </div>
