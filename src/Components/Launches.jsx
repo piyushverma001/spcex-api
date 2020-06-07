@@ -14,14 +14,15 @@ Grid,
 Card,
 CardActions,
 CardActionArea,
-CardContent,
+CardHeader,
 CircularProgress,
 Dialog,
 DialogTitle,
 DialogContent,
 DialogContentText,
 DialogActions,
-CardMedia
+CardMedia,
+Avatar
 } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -157,25 +158,32 @@ const Launches = () => {
                         {[...Data].map((item,id)=> (
                        <Grid key={id} item xs={12} sm={6} md={4} lg={3}>
                        <Card className={classes.cardContainer}>
+                           <CardHeader
+                           avatar={
+                            <Avatar src={item.links.mission_patch_small}
+                             className={classes.avatar} />
+                              
+                          }
+                            title={<Typography variant="h5" >
+                                {item.mission_name}
+                            </Typography>}
+                            subheader={item.rocket.rocket_name}
+                           />
+                               
                                <CardActionArea className={classes.cardActionarea}>
-                                   {/* {console.log(item.links.mission_patch)} */}
+                                <LazyLoad>
+
                                <CardMedia
                                 component="img"
                                 height="200"
                                 className={classes.media}
-                                image={item.links.mission_patch_small}
+                                image={
+                                    (item.links.flickr_images.length === 0) ? item.links.mission_patch_small : item.links.flickr_images[0]
+                                }
                                 title={item.mission_name}
                                 />
-                                   <CardContent className={classes.cardContent}>
-                                       <Typography gutterBottom variant="h5">
-                                           {item.mission_name}
-                                       </Typography>
-
-                                       {/* <Typography gutterBottom variant="body2">
-                                           Launch Date: {item.launch_date_local}
-                                       </Typography> */}
-
-                                   </CardContent>
+                                </LazyLoad>
+                                   
                                </CardActionArea>
                                    <CardActions className={classes.cardActionsContainer}>
 
