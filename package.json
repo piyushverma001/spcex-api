@@ -16,10 +16,10 @@
     "react-elastic-carousel": "^0.6.4",
     "react-infinite-scroll-component": "^5.0.5",
     "react-lazy-load": "^3.0.13",
-    "react-material-ui-carousel": "^1.5.1",
+    "react-material-ui-carousel": "^1.9.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-swipeable-views": "^0.13.9",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
